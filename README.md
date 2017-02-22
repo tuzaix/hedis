@@ -23,9 +23,6 @@
         cd hedis/
         bash install # 会在当前目录生成bin/hedis-server 二进制文件
 
-    非编译方式:
-        hedis/hedis-server --help
-
     配置:
         cd hedis/conf
         vim hedis.conf

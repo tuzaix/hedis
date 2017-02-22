@@ -1,0 +1,35 @@
+#!/bin/bash
+
+bin=`dirname "$0"`
+bin=`cd $bin; pwd`
+
+cd $bin
+rm -rf $bin/pkg
+
+. env.sh
+
+#git pull origin master
+
+TARGET=( hedis-server )
+
+if [ $# -eq 1 ]
+then
+    TARGET=($1)
+fi
+
+gofmt -w src
+if [ $? != 0 ]; then
+    echo "gofmt error"
+    exit 1
+fi
+
+for t in ${TARGET[@]}; do
+    go install $t
+    if [ $? != 0 ]; then
+        echo -e "install error"
+        exit 1
+    fi
+    echo -e "install success"
+done
+
+echo -e "done"

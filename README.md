@@ -18,8 +18,6 @@
         HMSET
 
 # 使用方式:
-    
-    git clone git@gitlab.niceprivate.com:opsa/hedis.git
 
     编译方式:
         cd hedis/

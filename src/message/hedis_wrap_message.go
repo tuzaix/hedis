@@ -94,11 +94,3 @@ func (this *HedisWrapMessage) parseKey(bytesValue []byte) (err error) {
 	}
 	return
 }
-
-// redis 读取 协议封装类
-type HRedisBox struct {
-	Command   string
-	Key       []byte
-	Others    [][]byte
-	TableName []byte
-}
